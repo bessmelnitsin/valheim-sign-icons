@@ -1,14 +1,11 @@
 <!doctype html>
-<html lang="ru" data-visualize-standalone>
+<html lang="en" data-visualize-standalone>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
 <title>Значки для табличек Valheim</title>
-<meta name="description" content="Выбери белый значок для таблички Valheim, настрой размер и положение, скопируй готовый код. Настройки сохраняются в твоём браузере.">
-<meta name="robots" content="noindex,nofollow">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%236b462c'/%3E%3Cpath d='M7 13h18v13H7zM7 8h18v5H7z' fill='none' stroke='%23fff' stroke-width='2'/%3E%3Cpath d='M15 13v6h3v-6' fill='none' stroke='%23fff' stroke-width='2'/%3E%3C/svg%3E">
 <style>:root{color-scheme:light dark;background:light-dark(rgb(255 255 255), rgb(24 24 24))}html,body{margin:0}body{box-sizing:border-box;padding:1rem;background:inherit}iframe{display:block;width:100%;height:calc(100vh - 2rem);margin:0 auto;border:0}</style>
 </head>
 <body>
@@ -1542,7 +1539,7 @@ html&gt;body{padding:0}&lt;/style&gt;
 &lt;/script&gt;
 &lt;div id=&quot;valheim-sign-calculator&quot;&gt;
   &lt;h1&gt;Значки для табличек Valheim&lt;/h1&gt;
-  &lt;p&gt;Выбери значок, нажми «Копировать код» и вставь в текст таблички через Ctrl+V. Размер и положение можно подогнать ниже&lt;/p&gt;
+  &lt;p&gt;Выбери значок, нажми «Копировать код» и вставь в текст таблички через Ctrl+V. Цвет, размер и положение можно подогнать ниже&lt;/p&gt;
   &lt;p class=&quot;text-small&quot;&gt;Каждый значок запоминает свои настройки в этом браузере&lt;/p&gt;
   &lt;style&gt;
     @import url(&#x27;https://fonts.googleapis.com/css2?family=Noto+Emoji:wght@400&amp;display=swap&#x27;);
@@ -1562,6 +1559,14 @@ html&gt;body{padding:0}&lt;/style&gt;
     #valheim-sign-calculator { --font-size-base:16px; }
     #valheim-sign-calculator .ve-hints { margin-top:8px; }
     #valheim-sign-calculator .ve-page-buttons { display:flex; gap:8px; align-items:center; }
+    #valheim-sign-calculator .ve-colors { display:flex; align-items:end; gap:12px; margin:12px 0 8px; }
+    #valheim-sign-calculator .ve-colors label { min-width:0; }
+    #valheim-sign-calculator .ve-colors [data-color] { width:64px; height:42px; padding:3px; cursor:pointer; }
+    #valheim-sign-calculator .ve-colors [data-color-hex] { width:128px; }
+    #valheim-sign-calculator .ve-swatches { display:flex; flex-wrap:wrap; gap:6px; }
+    #valheim-sign-calculator .ve-swatch { width:44px; height:44px; display:grid; place-items:center; padding:0; border:1px solid var(--border); background:var(--background); color:var(--foreground); }
+    #valheim-sign-calculator .ve-swatch::before { content:&#x27;&#x27;; width:24px; height:24px; background:var(--swatch-color); border:1px solid var(--border); border-radius:50%; }
+    #valheim-sign-calculator .ve-swatch[aria-pressed=true] { outline:2px solid var(--foreground); outline-offset:-2px; }
     #valheim-sign-calculator [hidden] { display:none !important; }
     @media(max-width:520px) { #valheim-sign-calculator .ve-fields { gap:8px; } #valheim-sign-calculator .ve-search { grid-template-columns:1fr; gap:8px; } #valheim-sign-calculator .ve-output { flex-wrap:wrap; } #valheim-sign-calculator .ve-output textarea { flex-basis:100%; } }
   &lt;/style&gt;
@@ -1576,6 +1581,20 @@ html&gt;body{padding:0}&lt;/style&gt;
   &lt;/div&gt;
   &lt;div class=&quot;ve-hints text-small&quot;&gt;Подъём: больше число — выше. Позиция X: больше число — правее&lt;/div&gt;
   &lt;label class=&quot;form-check&quot; style=&quot;margin-top:10px&quot;&gt;&lt;input class=&quot;form-check-input&quot; data-horizontal type=&quot;checkbox&quot; checked&gt;&lt;span class=&quot;form-check-label&quot;&gt;Горизонтальная подгонка&lt;/span&gt;&lt;/label&gt;
+  &lt;div class=&quot;ve-colors&quot; role=&quot;group&quot; aria-label=&quot;Цвет значка&quot;&gt;
+    &lt;label class=&quot;form-label&quot;&gt;Цвет &lt;input class=&quot;form-control&quot; data-color type=&quot;color&quot; value=&quot;#ffffff&quot; aria-label=&quot;Выбрать цвет&quot;&gt;&lt;/label&gt;
+    &lt;label class=&quot;form-label&quot;&gt;HEX &lt;input class=&quot;form-control&quot; data-color-hex type=&quot;text&quot; value=&quot;#FFFFFF&quot; maxlength=&quot;7&quot; spellcheck=&quot;false&quot; aria-label=&quot;Цвет HEX&quot;&gt;&lt;/label&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;ve-swatches&quot; role=&quot;group&quot; aria-label=&quot;Готовые цвета&quot;&gt;
+    &lt;button type=&quot;button&quot; class=&quot;ve-swatch&quot; data-preset=&quot;#FFFFFF&quot; style=&quot;--swatch-color:#FFFFFF&quot; aria-label=&quot;Белый&quot; data-tooltip=&quot;Белый&quot; aria-pressed=&quot;true&quot;&gt;&lt;/button&gt;
+    &lt;button type=&quot;button&quot; class=&quot;ve-swatch&quot; data-preset=&quot;#FFDD88&quot; style=&quot;--swatch-color:#FFDD88&quot; aria-label=&quot;Золотой&quot; data-tooltip=&quot;Золотой&quot; aria-pressed=&quot;false&quot;&gt;&lt;/button&gt;
+    &lt;button type=&quot;button&quot; class=&quot;ve-swatch&quot; data-preset=&quot;#FF8888&quot; style=&quot;--swatch-color:#FF8888&quot; aria-label=&quot;Красный&quot; data-tooltip=&quot;Красный&quot; aria-pressed=&quot;false&quot;&gt;&lt;/button&gt;
+    &lt;button type=&quot;button&quot; class=&quot;ve-swatch&quot; data-preset=&quot;#FFAA55&quot; style=&quot;--swatch-color:#FFAA55&quot; aria-label=&quot;Оранжевый&quot; data-tooltip=&quot;Оранжевый&quot; aria-pressed=&quot;false&quot;&gt;&lt;/button&gt;
+    &lt;button type=&quot;button&quot; class=&quot;ve-swatch&quot; data-preset=&quot;#88DD99&quot; style=&quot;--swatch-color:#88DD99&quot; aria-label=&quot;Зелёный&quot; data-tooltip=&quot;Зелёный&quot; aria-pressed=&quot;false&quot;&gt;&lt;/button&gt;
+    &lt;button type=&quot;button&quot; class=&quot;ve-swatch&quot; data-preset=&quot;#88DDFF&quot; style=&quot;--swatch-color:#88DDFF&quot; aria-label=&quot;Голубой&quot; data-tooltip=&quot;Голубой&quot; aria-pressed=&quot;false&quot;&gt;&lt;/button&gt;
+    &lt;button type=&quot;button&quot; class=&quot;ve-swatch&quot; data-preset=&quot;#99AAFF&quot; style=&quot;--swatch-color:#99AAFF&quot; aria-label=&quot;Синий&quot; data-tooltip=&quot;Синий&quot; aria-pressed=&quot;false&quot;&gt;&lt;/button&gt;
+    &lt;button type=&quot;button&quot; class=&quot;ve-swatch&quot; data-preset=&quot;#DD99FF&quot; style=&quot;--swatch-color:#DD99FF&quot; aria-label=&quot;Фиолетовый&quot; data-tooltip=&quot;Фиолетовый&quot; aria-pressed=&quot;false&quot;&gt;&lt;/button&gt;
+  &lt;/div&gt;
   &lt;div class=&quot;ve-output&quot;&gt;
     &lt;textarea class=&quot;form-control&quot; data-code rows=&quot;2&quot; readonly aria-label=&quot;Код выбранного значка&quot;&gt;&lt;/textarea&gt;
     &lt;button type=&quot;button&quot; class=&quot;btn&quot; data-copy&gt;Копировать код&lt;/button&gt;
@@ -1657,13 +1676,18 @@ SPDX-License-Identifier: Unicode-3.0
       const settingsBytes = new Uint8Array(items.length*4);
       const settingsView = new DataView(settingsBytes.buffer);
       const settingsCatalog = &#x27;valheim-25527674-single-1377-v1&#x27;;
+      const colorBytes = new Uint8Array(items.length*3).fill(255);
+      const normalizeColor = value =&gt; typeof value===&#x27;string&#x27;&amp;&amp;/^#?[0-9a-f]{6}$/i.test(value) ? &#x27;#&#x27;+value.replace(/^#/,&#x27;&#x27;).toUpperCase() : null;
+      function colorFor(glyph) {const offset=indexByGlyph.get(glyph)*3;return &#x27;#&#x27;+Array.from(colorBytes.subarray(offset,offset+3),v=&gt;v.toString(16).padStart(2,&#x27;0&#x27;)).join(&#x27;&#x27;).toUpperCase();}
+      function colorTag(color) {const h=color.slice(1);return &#x27;&lt;#&#x27;+(h[0]===h[1]&amp;&amp;h[2]===h[3]&amp;&amp;h[4]===h[5]?h[0]+h[2]+h[4]:h)+&#x27;&gt;&#x27;;}
+      function unpackColors(packed) {if(typeof packed!==&#x27;string&#x27;||packed.length&gt;6000)return false;try{const bytes=atob(packed);if(bytes.length!==colorBytes.length)return false;for(let i=0;i&lt;bytes.length;i++)colorBytes[i]=bytes.charCodeAt(i);return true;}catch(e){return false;}}
       const normalize = text =&gt; text.toLocaleLowerCase(&#x27;ru&#x27;).replace(/ё/g,&#x27;е&#x27;).replace(/\uFE0F/g,&#x27;&#x27;).trim();
       const preferred = [&#x27;🪨&#x27;,&#x27;🪵&#x27;,&#x27;🌲&#x27;,&#x27;🌳&#x27;,&#x27;🪶&#x27;,&#x27;🦴&#x27;,&#x27;💧&#x27;,&#x27;🌱&#x27;,&#x27;🌰&#x27;,&#x27;🔥&#x27;,&#x27;👁&#x27;,&#x27;🐗&#x27;,&#x27;🦌&#x27;,&#x27;🧌&#x27;,&#x27;⚔&#x27;,&#x27;🛡&#x27;,&#x27;🪖&#x27;,&#x27;🔨&#x27;,&#x27;🏹&#x27;,&#x27;🔩&#x27;,&#x27;⛏&#x27;,&#x27;🪓&#x27;,&#x27;🏆&#x27;,&#x27;💰&#x27;,&#x27;💎&#x27;,&#x27;🎒&#x27;,&#x27;📥&#x27;,&#x27;🌀&#x27;,&#x27;🏠&#x27;,&#x27;⛵&#x27;,&#x27;🧭&#x27;,&#x27;☠&#x27;];
       const priority = new Map(preferred.map((glyph,index) =&gt; [glyph,index]));
       const ordered = items.map((item,index)=&gt;({...item,index,search:normalize(item.name+&#x27; &#x27;+item.keywords+&#x27; &#x27;+item.code+&#x27; &#x27;+item.glyph)})).sort((a,b)=&gt;(priority.get(a.glyph) ?? 1000+a.index)-(priority.get(b.glyph) ?? 1000+b.index));
       const q = selector =&gt; root.querySelector(selector);
-      const state = {glyph:&#x27;🪨&#x27;,size:8,y:19,x:10,horizontal:true,query:&#x27;&#x27;,group:&#x27;all&#x27;,page:0};
-      const defaults = {size:8,y:19,x:10,horizontal:true};
+      const state = {glyph:&#x27;🪨&#x27;,size:8,y:19,x:10,horizontal:true,color:&#x27;#FFFFFF&#x27;,query:&#x27;&#x27;,group:&#x27;all&#x27;,page:0};
+      const defaults = {size:8,y:19,x:10,horizontal:true,color:&#x27;#FFFFFF&#x27;};
       const pageSize = 48;
       let filtered = ordered;
       function storeSettings() {
@@ -1671,12 +1695,15 @@ SPDX-License-Identifier: Unicode-3.0
         settingsBytes[offset]=state.size;
         settingsView.setInt16(offset+1,state.y,true);
         settingsBytes[offset+3]=state.x|(state.horizontal?128:0);
+        const colorOffset=indexByGlyph.get(state.glyph)*3;
+        for(let i=0;i&lt;3;i++)colorBytes[colorOffset+i]=parseInt(state.color.slice(1+i*2,3+i*2),16);
       }
       function loadSettings() {
         const offset=indexByGlyph.get(state.glyph)*4;
         const size=settingsBytes[offset], y=settingsView.getInt16(offset+1,true), x=settingsBytes[offset+3]&amp;127;
         if(size&gt;=1&amp;&amp;size&lt;=99&amp;&amp;y&gt;=-999&amp;&amp;y&lt;=999&amp;&amp;x&lt;=99) {state.size=size;state.y=y;state.x=x;state.horizontal=Boolean(settingsBytes[offset+3]&amp;128);}
         else Object.assign(state,defaults);
+        state.color=colorFor(state.glyph);
       }
       function packedSettings() { return btoa(String.fromCharCode(...settingsBytes)); }
       function unpackSettings(packed) {
@@ -1685,23 +1712,27 @@ SPDX-License-Identifier: Unicode-3.0
       }
       function rememberedCount() {let count=0;for(let i=0;i&lt;items.length;i++)if(settingsBytes[i*4])count++;return count;}
       function remember() {
-        if(window.openai?.setWidgetState) window.openai.setWidgetState({modelContent:{glyph:state.glyph,name:byGlyph.get(state.glyph).name,size:state.size,voffset:state.y,posPercent:state.horizontal?state.x:null,query:state.query,category:state.group,rememberedSymbols:rememberedCount()},privateContent:{...state,settingsCatalog,settingsV1:packedSettings()}}).catch(()=&gt;{});
+        if(window.openai?.setWidgetState) window.openai.setWidgetState({modelContent:{glyph:state.glyph,name:byGlyph.get(state.glyph).name,size:state.size,voffset:state.y,posPercent:state.horizontal?state.x:null,color:state.color,query:state.query,category:state.group,rememberedSymbols:rememberedCount()},privateContent:{...state,settingsCatalog,settingsV1:packedSettings(),colorsV1:btoa(String.fromCharCode(...colorBytes))}}).catch(()=&gt;{});
       }
       function renderSelection(syncInputs=true) {
         const item = byGlyph.get(state.glyph);
         q(&#x27;[data-selected-icon]&#x27;).textContent = item.glyph;
+        q(&#x27;[data-selected-icon]&#x27;).style.color=state.color;
+        q(&#x27;[data-color]&#x27;).value=state.color;
+        if(syncInputs||document.activeElement!==q(&#x27;[data-color-hex]&#x27;))q(&#x27;[data-color-hex]&#x27;).value=state.color;
+        root.querySelectorAll(&#x27;[data-preset]&#x27;).forEach(button=&gt;button.setAttribute(&#x27;aria-pressed&#x27;,String(button.dataset.preset===state.color)));
         q(&#x27;[data-selected-name]&#x27;).textContent = item.name;
         q(&#x27;[data-selected-codepoint]&#x27;).textContent = item.code;
         if(syncInputs) { q(&#x27;[data-size]&#x27;).value=state.size; q(&#x27;[data-y]&#x27;).value=state.y; q(&#x27;[data-x]&#x27;).value=state.x; }
         q(&#x27;[data-horizontal]&#x27;).checked=state.horizontal; q(&#x27;[data-x]&#x27;).disabled=!state.horizontal;
-        const code = (state.horizontal?&#x27;&lt;align=left&gt;&lt;pos=&#x27;+state.x+&#x27;%&gt;&#x27;:&#x27;&#x27;)+&#x27;&lt;#FFF&gt;&lt;size=&#x27;+state.size+&#x27;&gt;&lt;voffset=&#x27;+state.y+&#x27;&gt;&#x27;+item.glyph;
+        const code = (state.horizontal?&#x27;&lt;align=left&gt;&lt;pos=&#x27;+state.x+&#x27;%&gt;&#x27;:&#x27;&#x27;)+colorTag(state.color)+&#x27;&lt;size=&#x27;+state.size+&#x27;&gt;&lt;voffset=&#x27;+state.y+&#x27;&gt;&#x27;+item.glyph;
         q(&#x27;[data-code]&#x27;).value=code;
         q(&#x27;[data-length]&#x27;).textContent=code.length+&#x27; / 50 символов с учётом тегов&#x27;;
         q(&#x27;[data-error]&#x27;).hidden=code.length&lt;=50;
         q(&#x27;[data-error]&#x27;).textContent=&#x27;Строка длиннее 50: уменьши число или отключи горизонтальную подгонку&#x27;;
         q(&#x27;[data-copy-status]&#x27;).hidden=true;
         q(&#x27;[data-copy]&#x27;).textContent=&#x27;Копировать код&#x27;;
-        root.querySelectorAll(&#x27;[data-glyph]&#x27;).forEach(button=&gt;button.setAttribute(&#x27;aria-pressed&#x27;,String(button.dataset.glyph===state.glyph)));
+        root.querySelectorAll(&#x27;[data-glyph]&#x27;).forEach(button=&gt;{button.setAttribute(&#x27;aria-pressed&#x27;,String(button.dataset.glyph===state.glyph));button.style.color=colorFor(button.dataset.glyph);});
       }
       function renderCatalog(syncFilters=true) {
         const words=normalize(state.query).split(/\s+/).filter(Boolean);
@@ -1714,6 +1745,7 @@ SPDX-License-Identifier: Unicode-3.0
         filtered.slice(start,start+pageSize).forEach(item=&gt;{
           const button=document.createElement(&#x27;button&#x27;); button.type=&#x27;button&#x27;; button.className=&#x27;ve-symbol cursor-interaction&#x27;;
           button.dataset.glyph=item.glyph; button.dataset.tooltip=item.name+&#x27; · &#x27;+item.code; button.textContent=item.glyph;
+          button.style.color=colorFor(item.glyph);
           button.setAttribute(&#x27;aria-label&#x27;,item.name+&#x27; &#x27;+item.code); button.setAttribute(&#x27;aria-pressed&#x27;,String(item.glyph===state.glyph));
           button.addEventListener(&#x27;click&#x27;,()=&gt;{storeSettings();state.glyph=item.glyph;loadSettings();renderSelection();remember();}); grid.append(button);
         });
@@ -1724,15 +1756,18 @@ SPDX-License-Identifier: Unicode-3.0
       }
       function restore(snapshot) {
         const s=snapshot?.privateContent;
+        colorBytes.fill(255);
         if(s &amp;&amp; byGlyph.has(s.glyph)) state.glyph=s.glyph;
         if(s &amp;&amp; Number.isInteger(s.size) &amp;&amp; s.size&gt;=1 &amp;&amp; s.size&lt;=99) state.size=s.size;
         if(s &amp;&amp; Number.isInteger(s.y) &amp;&amp; s.y&gt;=-999 &amp;&amp; s.y&lt;=999) state.y=s.y;
         if(s &amp;&amp; Number.isInteger(s.x) &amp;&amp; s.x&gt;=0 &amp;&amp; s.x&lt;=99) state.x=s.x;
         if(s &amp;&amp; typeof s.horizontal===&#x27;boolean&#x27;) state.horizontal=s.horizontal;
+        state.color=normalizeColor(s?.color)||&#x27;#FFFFFF&#x27;;
         if(s &amp;&amp; typeof s.query===&#x27;string&#x27;) state.query=s.query.slice(0,200);
         if(s &amp;&amp; Array.from(q(&#x27;[data-group]&#x27;).options).some(o=&gt;o.value===s.group)) state.group=s.group;
         if(s &amp;&amp; Number.isInteger(s.page)) state.page=s.page;
         const hasPacked=s&amp;&amp;s.settingsCatalog===settingsCatalog&amp;&amp;unpackSettings(s.settingsV1);
+        if(hasPacked)unpackColors(s.colorsV1);
         if(hasPacked&amp;&amp;settingsBytes[indexByGlyph.get(state.glyph)*4])loadSettings();else storeSettings();
         renderSelection(); renderCatalog();
       }
@@ -1741,6 +1776,12 @@ SPDX-License-Identifier: Unicode-3.0
         q(selector).addEventListener(&#x27;change&#x27;,e=&gt;{const v=e.target.valueAsNumber;if(Number.isFinite(v))state[key]=Math.max(min,Math.min(max,Math.round(v)));storeSettings();renderSelection();remember();});
       });
       q(&#x27;[data-horizontal]&#x27;).addEventListener(&#x27;change&#x27;,e=&gt;{state.horizontal=e.target.checked;storeSettings();renderSelection();remember();});
+      function applyColor(value,syncInputs=true) {const color=normalizeColor(value);if(!color)return false;state.color=color;storeSettings();renderSelection(syncInputs);remember();return true;}
+      q(&#x27;[data-color]&#x27;).addEventListener(&#x27;input&#x27;,e=&gt;applyColor(e.target.value));
+      q(&#x27;[data-color-hex]&#x27;).addEventListener(&#x27;input&#x27;,e=&gt;applyColor(e.target.value,false));
+      q(&#x27;[data-color-hex]&#x27;).addEventListener(&#x27;change&#x27;,e=&gt;{applyColor(e.target.value);q(&#x27;[data-color-hex]&#x27;).value=state.color;});
+      q(&#x27;[data-color-hex]&#x27;).addEventListener(&#x27;blur&#x27;,()=&gt;{q(&#x27;[data-color-hex]&#x27;).value=state.color;});
+      root.querySelectorAll(&#x27;[data-preset]&#x27;).forEach(button=&gt;button.addEventListener(&#x27;click&#x27;,()=&gt;applyColor(button.dataset.preset)));
       q(&#x27;[data-search]&#x27;).addEventListener(&#x27;input&#x27;,e=&gt;{state.query=e.target.value.slice(0,200);state.page=0;renderCatalog(false);remember();});
       q(&#x27;[data-group]&#x27;).addEventListener(&#x27;change&#x27;,e=&gt;{state.group=e.target.value;state.page=0;renderCatalog(false);remember();});
       q(&#x27;[data-prev]&#x27;).addEventListener(&#x27;click&#x27;,()=&gt;{state.page--;renderCatalog(false);remember();});
@@ -1760,7 +1801,7 @@ SPDX-License-Identifier: Unicode-3.0
         q(&#x27;[data-copy]&#x27;).textContent=copied?&#x27;Скопировано&#x27;:&#x27;Копировать код&#x27;;
       });
       if(document.modelContext?.registerTool) {
-        try {Promise.resolve(document.modelContext.registerTool({name:&#x27;configure_valheim_sign&#x27;,title:&#x27;Настроить значок Valheim&#x27;,description:&#x27;Выбрать значок и его размер/положение; вернуть белый код таблички. Буфер обмена не изменяется.&#x27;,inputSchema:{type:&#x27;object&#x27;,properties:{glyph:{type:&#x27;string&#x27;},size:{type:&#x27;integer&#x27;,minimum:1,maximum:99},voffset:{type:&#x27;integer&#x27;,minimum:-999,maximum:999},posPercent:{type:&#x27;integer&#x27;,minimum:0,maximum:99},horizontal:{type:&#x27;boolean&#x27;}},required:[&#x27;glyph&#x27;],additionalProperties:false},annotations:{readOnlyHint:false,untrustedContentHint:false},execute(input){if(!input||typeof input!==&#x27;object&#x27;||!byGlyph.has(input.glyph)||Object.keys(input).some(k=&gt;![&#x27;glyph&#x27;,&#x27;size&#x27;,&#x27;voffset&#x27;,&#x27;posPercent&#x27;,&#x27;horizontal&#x27;].includes(k)))throw new Error(&#x27;Неверный значок или параметр&#x27;);for(const[k,min,max]of[[&#x27;size&#x27;,1,99],[&#x27;voffset&#x27;,-999,999],[&#x27;posPercent&#x27;,0,99]])if(input[k]!==undefined&amp;&amp;(!Number.isInteger(input[k])||input[k]&lt;min||input[k]&gt;max))throw new Error(&#x27;Значение вне диапазона&#x27;);if(input.horizontal!==undefined&amp;&amp;typeof input.horizontal!==&#x27;boolean&#x27;)throw new Error(&#x27;Неверная настройка горизонтали&#x27;);storeSettings();state.glyph=input.glyph;loadSettings();if(input.size!==undefined)state.size=input.size;if(input.voffset!==undefined)state.y=input.voffset;if(input.posPercent!==undefined)state.x=input.posPercent;if(input.horizontal!==undefined)state.horizontal=input.horizontal;storeSettings();renderSelection();remember();return{glyph:state.glyph,code:q(&#x27;[data-code]&#x27;).value};}})).catch(()=&gt;{});}catch(e){}
+        try {Promise.resolve(document.modelContext.registerTool({name:&#x27;configure_valheim_sign&#x27;,title:&#x27;Настроить значок Valheim&#x27;,description:&#x27;Выбрать значок и его размер/положение; вернуть код таблички. Буфер обмена не изменяется.&#x27;,inputSchema:{type:&#x27;object&#x27;,properties:{glyph:{type:&#x27;string&#x27;},size:{type:&#x27;integer&#x27;,minimum:1,maximum:99},voffset:{type:&#x27;integer&#x27;,minimum:-999,maximum:999},posPercent:{type:&#x27;integer&#x27;,minimum:0,maximum:99},horizontal:{type:&#x27;boolean&#x27;}},required:[&#x27;glyph&#x27;],additionalProperties:false},annotations:{readOnlyHint:false,untrustedContentHint:false},execute(input){if(!input||typeof input!==&#x27;object&#x27;||!byGlyph.has(input.glyph)||Object.keys(input).some(k=&gt;![&#x27;glyph&#x27;,&#x27;size&#x27;,&#x27;voffset&#x27;,&#x27;posPercent&#x27;,&#x27;horizontal&#x27;].includes(k)))throw new Error(&#x27;Неверный значок или параметр&#x27;);for(const[k,min,max]of[[&#x27;size&#x27;,1,99],[&#x27;voffset&#x27;,-999,999],[&#x27;posPercent&#x27;,0,99]])if(input[k]!==undefined&amp;&amp;(!Number.isInteger(input[k])||input[k]&lt;min||input[k]&gt;max))throw new Error(&#x27;Значение вне диапазона&#x27;);if(input.horizontal!==undefined&amp;&amp;typeof input.horizontal!==&#x27;boolean&#x27;)throw new Error(&#x27;Неверная настройка горизонтали&#x27;);storeSettings();state.glyph=input.glyph;loadSettings();if(input.size!==undefined)state.size=input.size;if(input.voffset!==undefined)state.y=input.voffset;if(input.posPercent!==undefined)state.x=input.posPercent;if(input.horizontal!==undefined)state.horizontal=input.horizontal;storeSettings();renderSelection();remember();return{glyph:state.glyph,code:q(&#x27;[data-code]&#x27;).value};}})).catch(()=&gt;{});}catch(e){}
       }
       window.addEventListener(&#x27;openai:set_globals&#x27;,e=&gt;{if(e.detail?.globals?.widgetState)restore(e.detail.globals.widgetState);});
       restore(window.openai?.widgetState);
